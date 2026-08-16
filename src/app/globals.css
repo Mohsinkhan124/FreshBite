@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   FreshBite Design Tokens — Tailwind 4 CSS-first configuration.
+   Every token declared here is automatically available as a utility
+   (e.g. --color-brand-500 -> bg-brand-500 / text-brand-500 / border-brand-500).
+   ========================================================================= */
+@theme {
+  /* ---- Brand: Fresh Green ---- */
+  --color-brand-50: oklch(0.97 0.03 150);
+  --color-brand-100: oklch(0.94 0.06 150);
+  --color-brand-200: oklch(0.89 0.1 150);
+  --color-brand-300: oklch(0.82 0.14 150);
+  --color-brand-400: oklch(0.74 0.17 150);
+  --color-brand-500: oklch(0.66 0.19 150);
+  --color-brand-600: oklch(0.57 0.17 150);
+  --color-brand-700: oklch(0.47 0.14 150);
+  --color-brand-800: oklch(0.38 0.11 150);
+  --color-brand-900: oklch(0.3 0.08 150);
+
+  /* ---- Cream / Surface ---- */
+  --color-cream-50: oklch(0.99 0.008 85);
+  --color-cream-100: oklch(0.975 0.014 85);
+  --color-cream-200: oklch(0.955 0.02 85);
+  --color-cream-300: oklch(0.92 0.026 85);
+
+  /* ---- Ink (text) ---- */
+  --color-ink-400: oklch(0.62 0.012 250);
+  --color-ink-500: oklch(0.52 0.014 250);
+  --color-ink-700: oklch(0.34 0.016 250);
+  --color-ink-900: oklch(0.2 0.018 250);
+
+  /* ---- Semantic ---- */
+  --color-success: oklch(0.66 0.17 150);
+  --color-warning: oklch(0.78 0.16 75);
+  --color-danger: oklch(0.6 0.21 25);
+
+  /* ---- Typography ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), var(--font-inter), sans-serif;
+
+  /* ---- Radii ---- */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* ---- Elevation ---- */
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px -8px oklch(0 0 0 / 0.1);
+  --shadow-lift: 0 2px 4px oklch(0 0 0 / 0.04), 0 16px 40px -12px oklch(0 0 0 / 0.16);
+  --shadow-brand: 0 8px 28px -8px oklch(0.66 0.19 150 / 0.45);
+
+  /* ---- Motion ---- */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-cream-300);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-cream-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-fb {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1400px;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-fb {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-fb {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .glass {
+    background-color: oklch(1 0 0 / 0.7);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid oklch(1 0 0 / 0.6);
+  }
+
+  .card-fb {
+    border-radius: var(--radius-2xl);
+    background-color: #fff;
+    border: 1px solid var(--color-cream-200);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Shimmer skeleton — used by <Skeleton /> and all loading states. */
+@utility skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-cream-200);
+  border-radius: 0.5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.65), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,82 @@
+🥬 Vegetables
+Fresh Tomato 
+Potato 
+Onion 
+Cucumber
+Carrot
+Capsicum
+Cauliflower
+Cabbage
+Spinach
+Green Chili
+🍎 Fruits
+Fresh Apple
+Banana
+Mango
+Orange
+Grapes
+Watermelon
+Pomegranate
+Pineapple
+Strawberry
+Guava
+🥛 Dairy & Eggs
+Fresh Milk
+Yogurt
+Butter
+Cheese
+Eggs
+🍞 Bakery
+White Bread
+Brown Bread
+Burger Buns
+Croissant
+Chocolate Cake
+🍗 Meat & Seafood
+Chicken Breast
+Chicken Wings
+Beef Boneless
+Mutton
+Fish Fillet
+🍚 Pantry
+Basmati Rice
+Wheat Flour
+Cooking Oil
+Sugar
+Salt
+🥤 Beverages 
+Coca-Cola 1.5L
+Pepsi 1.5L
+Sprite 1.5L
+Orange Juice
+Mineral Water
+🍟 Snacks
+Lays Chips
+Kurkure
+Oreo Biscuits
+Chocolate Cookies
+Mixed Dry Fruits
+Categories
+🥬 Vegetables
+🍎 Fruits
+🥛 Dairy & Eggs
+🍞 Bakery
+🍗 Meat & Seafood
+🍚 Pantry
+🥤 Beverages
+🍟 Snacks
+
+
+
+
+Zinger Burger
+Beef Burger
+Chicken Pizza
+Pepperoni Pizza
+Chicken Sandwich
+French Fries
+Chicken Nuggets
+Fried Chicken
+Shawarma
+Hot Dog
+Chicken Wrap
